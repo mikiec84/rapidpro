@@ -1,6 +1,47 @@
 app = angular.module('temba.widgets', [])
 
 #============================================================================
+# Displaying USSD Menu with textarea, menu inputs and char counter
+#============================================================================
+app.directive "ussd", [ "$log", "Flow", ($log, Flow) ->
+  MESSAGE_LENGTH = 182
+  link = (scope, element, attrs) ->
+
+    scope.showCounter = true
+    if attrs.showCounter?
+      scope.showCounter = eval(attrs.showCounter)
+
+    # find out how many sms messages this will be
+    scope.countCharacters = ->
+      if scope.message
+        length = scope.message.length
+        scope.messages = Math.ceil(length/MESSAGE_LENGTH)
+        scope.characters = scope.messages * MESSAGE_LENGTH - length
+      else
+        scope.messages = 0
+        scope.characters = MESSAGE_LENGTH
+
+    # update our counter everytime the message changes
+    scope.$watch (->scope.message), scope.countCharacters
+
+    # determine the initial message based on the current language
+    if scope.sms
+      scope.message = scope.sms[Flow.flow.base_language]
+      if not scope.message
+        scope.message = ""
+
+  return {
+    templateUrl: "/partials/ussd_directive"
+    restrict: "A"
+    link: link
+    scope: {
+      sms: '='
+      message: '='
+    }
+  }
+]
+
+#============================================================================
 # Simple directive for displaying a localized textarea with a char counter
 #============================================================================
 app.directive "sms", [ "$log", "Flow", ($log, Flow) ->
