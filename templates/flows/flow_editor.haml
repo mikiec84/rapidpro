@@ -415,6 +415,23 @@
                     [[action.webhook]]
 
           .add.icon-plus-circle2{ng-click:'addAction(action_set);'}
+
+
+          // USSD menu items start
+          .ussd-flow-items
+            .ussd-flow-item
+              %span.ussd-number
+                1
+              %span.ussd-label
+                Blablabla
+            .ussd-flow-item
+              %span.ussd-number
+                2
+              %span.ussd-label
+                Yoloka Lorem ipsum dolor sit amet
+          // USSD menu items end
+
+
           .source{ng-attr-id:'[[action_set.uuid]]_source', drop-scope:'rules', ng-class:'{connected:action_set.destination}', ng-click:'clickActionSource(action_set); $event.stopPropagation()'}
             .recent-messages{ng-show:'action_set._showMessages'}
               .title

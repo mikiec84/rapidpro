@@ -1694,3 +1694,43 @@
     }
   }
 }
+
+
+// USSD
+
+.ussd-flow-items {
+  display: block;
+  padding: 6px;
+  
+  .ussd-flow-item {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 6px;
+    color: #fff;
+    // font-weight: 700;
+    line-height: 25px;
+    text-shadow: 0 1px rgba(0,0,0,.15);
+
+    .ussd-number {
+      display: table-cell;
+      width: 25px;
+      height: 25px;
+      background-color: #757575;
+      text-align: center;
+      border: 1px solid #696969;
+    }
+
+    .ussd-label {
+      display: table-cell;
+      height: 25px;
+      padding: 0 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background-color: #8f8f8f;
+      border: solid #828282;
+      border-width: 1px 1px 1px 0;
+    }
+  }
+}

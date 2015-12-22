@@ -221,6 +221,99 @@ form.form-horizontal textarea, form.form-vertical textarea {
   padding-left: 160px;
 }
 
+// USSD modal
+
+.ussd-directive {
+  label {
+    display: block;
+    margin-top: 5px;
+    font-weight: 200;
+  }
+
+  textarea {
+    height: auto !important;
+  }
+
+  input.styled {
+    display: inline-block;
+    height: 25px;
+    padding: 4px 6px;
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid #CCCBCF;
+    .rounded-corners(0);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+
+    &:focus {
+      border-color: rgba(82, 168, 236, 0.8);
+      outline: 0;
+      outline: thin dotted \9;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+  }
+
+  .ussd-item {
+    display: block;
+    overflow: hidden;
+    margin: 10px 0;
+
+    &.ussd-item-addnew {}
+    &.ussd-item-added {
+      input {
+        font-weight: 700;
+      }
+    }
+
+    > span {
+      float: left;
+      width: auto;
+
+      input.ussd-number {
+        width: 23px;
+        margin-right: 10px;
+        text-align: center;
+      }
+
+      input.ussd-label {
+        width: 414px;
+        margin-right: 10px;
+      }
+
+      button {
+        width: 35px;
+        height: 35px;
+        padding: 0 0 4px;
+        text-align: center;
+        font-size: 23px;
+        color: #888;
+        border: 1px solid #AAA9AE;
+        background: #ccc;
+        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.6, #eee));
+        background-image: -webkit-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+        background-image: -moz-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#eeeeee', endColorstr = '#cccccc', GradientType = 0);
+        background-image: linear-gradient(top, #ccc 0%, #eee 60%);
+
+        &.ussd-remove {
+          color: #aaa;
+          border-color: #CCCBCF;
+          background-color: #fff;
+          background-image: none;
+        }
+      }
+    }
+  }
+}
+
 // nav styling
 
 .nav > li > a {
@@ -2493,6 +2586,46 @@ span.label a {
   -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
+
+// USSD simulator styling
+
+#simulator.ussd {
+  .imsg {
+    .rounded-corners(0px);
+  }
+
+  .imsg.to {
+    margin-left: 20px;
+    background-color: #757479;
+  }
+
+  .imsg.from {
+    margin-right: 20px;
+    background-color: #E5E4E9;
+  }
+
+  .imsg:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    border-color: #000;
+    border-radius: 0;
+    clip: auto !important;
+    width: 0;
+    height: 0;
+    border-width: 0;
+    border-bottom: 20px solid #757479 !important;
+    border-right: 20px solid transparent !important;
+  }
+
+  .imsg.from:before {
+    right: auto;
+    left: -10px;
+    border-bottom-color: #E5E4E9 !important;
+  }
+}
+
 
 // completion custom styles
 

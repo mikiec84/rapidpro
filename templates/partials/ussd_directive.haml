@@ -1,8 +1,34 @@
 .ussd-directive
   %label
-    %textarea{ng-model:"message",name:"ussd",auto-complete:"",required:"",flow:"[[$parent.flowId]]",ng-required:"true",class:"ussd"}
-    %input{ng-model:"action.labels", name:"msg_labels", select-label:"", required:"", type:"hidden"}
-  .counter{ng-class:"{warning: characters < 20}",ng-show:"showCounter"}
-    [[characters]]
-    %span{ng-show:"messages > 1"}
-      \/ [[messages]]
+    Add text:
+  %textarea{ng-model:"message",name:"ussd",auto-complete:"",required:"",flow:"[[$parent.flowId]]",ng-required:"true",class:"ussd"}
+
+  %label
+    Add menu item(s):
+  
+  %div.ussd-item.ussd-item-addnew
+    %span
+      %input.styled.ussd-number{type:"text",placeholder:"#"}
+    %span
+      %input.styled.ussd-label{type:"text",placeholder:"Label title"}
+    %span
+      %button.ussd-add
+        +
+  
+  // Note: Items to be added, can be duplicated
+  / %div.ussd-item.ussd-item-added
+  /   %span
+  /     %input.styled.ussd-number{type:"text",value:"1"}
+  /   %span
+  /     %input.styled.ussd-label{type:"text",value:"Sample label title"}
+  /   %span
+  /     %button.ussd-remove
+  /       &minus;
+
+
+
+  // TODO: Place this into modal's footer
+  /.counter{ng-class:"{warning: characters < 20}",ng-show:"showCounter"}
+  /  [[characters]]
+  /  %span{ng-show:"messages > 1"}
+  /    \/ [[messages]]
