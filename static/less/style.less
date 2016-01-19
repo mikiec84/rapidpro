@@ -271,9 +271,17 @@ form.form-horizontal textarea, form.form-vertical textarea {
 
   .ussd-item {
     display: block;
-    // clearfix?
-    // overflow: hidden;
     margin: 10px 0;
+    // overflow: hidden;
+    // clearfix
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
 
     &.ussd-item-addnew {}
     &.ussd-item-added {
