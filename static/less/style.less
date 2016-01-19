@@ -230,8 +230,9 @@ form.form-horizontal textarea, form.form-vertical textarea {
     font-weight: 200;
   }
 
-  textarea {
-    height: auto !important;
+  textarea.ussd {
+    height: auto;
+    resize: vertical;
   }
 
   input.styled {
@@ -1863,7 +1864,7 @@ tr.checked {
 
     .modal-footer {
       .primary {
-	background: @color-alert-error;        
+	background: @color-alert-error;
 	border: 1px solid @color-alert-error - #111;
       }
     }
