@@ -476,6 +476,12 @@
             background: @color-bg-translate;
             border-color: @color-bg-translate - #222;
           }
+
+          // USSD rule interrupted (Other)
+          &.interrupted {
+            color: #8B2A2A;
+            background-color: #FFFBC5;
+          }
         }
       }
     }
@@ -1696,18 +1702,24 @@
 }
 
 
-// USSD
+// USSD flow split view
 
 .ussd-flow-items-wrapper {
+  position: relative;
   display: block;
   padding: 6px 6px 0;
+  border: solid rgba(0,0,0,.15);
+  border-width: 0 0 1px;
+}
+
+.ussd-flow-text {
+  padding: 0 0 6px;
 }
 
 .ussd-flow-items {
   display: table;
-  width: 100%;
-  padding: 6px 3px;
-  border: 1px solid rgba(0,0,0,.15);
+  width: inherit;
+  padding: 0 0 6px;
   .box-sizing();
 
   .ussd-flow-item {
@@ -1724,7 +1736,7 @@
       display: table-cell;
       min-width: 19px;
       height: 25px;
-      padding: 0 3px;
+      padding: 0 3px 0 0;
       color: #bdc3c7;
 
       > span {
@@ -1742,7 +1754,7 @@
 
     .ussd-label {
       display: table-cell;
-      width: 100%;
+      width: auto;
       height: 25px;
       padding: 0 6px;
       line-height: 16px;

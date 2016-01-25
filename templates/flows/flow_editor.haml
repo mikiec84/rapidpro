@@ -417,42 +417,6 @@
           .add.icon-plus-circle2{ng-click:'addAction(action_set);'}
 
 
-          // USSD menu items start
-          .ussd-flow-items-wrapper
-            .ussd-flow-items
-              .ussd-flow-item
-                %span.ussd-number
-                  %span
-                    1
-                %span.ussd-label
-                  Blablabla
-              .ussd-flow-item
-                %span.ussd-number
-                  %span
-                    2
-                %span.ussd-label
-                  Yoloka
-              .ussd-flow-item
-                %span.ussd-number
-                  %span
-                    3
-                %span.ussd-label
-                  Probably yes.
-              .ussd-flow-item
-                %span.ussd-number
-                  %span
-                    4
-                %span.ussd-label
-                  Probably no.
-              .ussd-flow-item
-                %span.ussd-number
-                  %span
-                    5
-                %span.ussd-label
-                  Lorem ipsum dolor
-          // USSD menu items end
-
-
           .source{ng-attr-id:'[[action_set.uuid]]_source', drop-scope:'rules', ng-class:'{connected:action_set.destination}', ng-click:'clickActionSource(action_set); $event.stopPropagation()'}
             .recent-messages{ng-show:'action_set._showMessages'}
               .title
@@ -518,6 +482,43 @@
               Remove Rules?
 
             .remove.icon-close{ ng-click: 'confirmRemoveRuleset($event, ruleset); $event.stopPropagation()' }
+
+          // USSD text & menu
+          .ussd-flow-items-wrapper
+            .ussd-flow-text
+              Lorem ipsum dolor sit amet consectetur?
+            .ussd-flow-items
+              .ussd-flow-item
+                %span.ussd-number
+                  %span
+                    1
+                %span.ussd-label
+                  Blablabla
+              .ussd-flow-item
+                %span.ussd-number
+                  %span
+                    2
+                %span.ussd-label
+                  Yoloka
+              .ussd-flow-item
+                %span.ussd-number
+                  %span
+                    3
+                %span.ussd-label
+                  Probably yes.
+              .ussd-flow-item
+                %span.ussd-number
+                  %span
+                    4
+                %span.ussd-label
+                  Probably no.
+              .ussd-flow-item
+                %span.ussd-number
+                  %span
+                    5
+                %span.ussd-label
+                  Lorem ipsum dolor
+
 
           %table{style:'width:100%;', ruleset:"ruleset", ng-click:'clickRuleset(ruleset)'}
             %tr.rules
