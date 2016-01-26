@@ -478,6 +478,7 @@
           }
 
           // USSD rule interrupted (Other)
+
           &.interrupted {
             color: #8B2A2A;
             background-color: #FFFBC5;
@@ -1040,8 +1041,12 @@
     .split-choice {
       width: 330px;
     }
-
   }
+
+  .split-header-inner {
+    padding: 10px 20px 0px;
+  }
+
   .split-margin {
     padding: 0 20px;
   }
@@ -1075,7 +1080,7 @@
     padding-top: 5px;
     padding-bottom: 0px;
     background: #fff;
-    border: 1 px solid #eee;
+    // border: 1px solid #eee;
 
     &.ui-sortable-helper {
       border: 1px solid @flat-white - #111 !important;
@@ -1092,10 +1097,28 @@
       height: 30px;
     }
 
+    .ordinals {
+      display: inline-block;
+      width: 45px;
+
+        .number {
+          width: 30px;
+          text-align: center;
+        }
+    }
+
     .operation {
       display: inline-block;
       width: 160px;
       padding: 0 8px;
+
+      &.wide {
+        width: 305px;
+
+        .operand {
+          width: 290px;
+        }
+      }
 
       .operand {
         width: 145px;
@@ -1266,8 +1289,8 @@
 
   #split-on {
     padding-top:2px;
-    margin-top:5px;
-    font-size:13px;
+    margin-top:10px;
+    font-size:15px;
     margin-bottom:9px;
     margin-left:20px;
 
@@ -1699,8 +1722,15 @@
       margin-left:4px;
     }
   }
-}
 
+  // USSD add text
+
+  textarea.ussd-add-text {
+    width: 595px;
+    height: 40px;
+    resize: vertical;
+  }
+}
 
 // USSD flow split view
 
@@ -1712,15 +1742,18 @@
   border-width: 0 0 1px;
 }
 
+// set width to 'ruleset' table by js
+
 .ussd-flow-text {
+  display: block;
   padding: 0 0 6px;
 }
 
+// set width to 'ruleset' table by js
+
 .ussd-flow-items {
   display: table;
-  width: inherit;
   padding: 0 0 6px;
-  .box-sizing();
 
   .ussd-flow-item {
     display: table-row;
